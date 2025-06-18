@@ -52,31 +52,22 @@
 
 
 
- function getAdjective() {
-
- // TODO: return a random adjective from the adjectives array
-
- }
+function getAdjective() {
+    return adjectives[Math.floor(Math.random() * adjectives.length)];
+}
 
 
 
- function getNoun() {
-
- // TODO: return a random noun from the nouns array
-
- }
+function getNoun() {
+    return nouns[Math.floor(Math.random() * nouns.length)];
+}
 
 
 
- function generateBandName() {
-
- // TODO: use getAdjective() and getNoun() to build a band name
-
- // Format: "The Adjective Noun"
-
- // Then update the DOM to show the band name inside #band-name
-
- }
+function generateBandName() {
+    const bandName = `The ${getAdjective()} ${getNoun()}`;
+    document.getElementById("band-name").textContent = bandName;
+}
 
 
 
