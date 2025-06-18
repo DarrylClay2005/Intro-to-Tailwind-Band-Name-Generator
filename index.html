@@ -27,7 +27,23 @@
  <h1>Band Name Generator</h1>
 
  <p>Click the button to reveal your new band name.</p>
+<button id="generate-btn">Generate Name</button>
+<script>
+function getAdjective() {
+    return adjectives[Math.floor(Math.random() * adjectives.length)];
+}
 
+function getNoun() {
+    return nouns[Math.floor(Math.random() * nouns.length)];
+}
+
+function generateBandName() {
+    const bandName = `The ${getAdjective()} ${getNoun()}`;
+    document.getElementById("band-name").textContent = bandName;
+}
+
+document.getElementById("generate-btn").addEventListener("click", generateBandName);
+</script>
 
 
  <div id="band-name">
