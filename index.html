@@ -132,6 +132,18 @@ function generateBandName() {
 
  document.getElementById("generate-btn").addEventListener("click", generateBandName);
 
+const audio = new Audio('NSYNC ｜ Bye Bye Bye (16-bit Remix).mp3');
+audio.loop = true;
+audio.volume = 0.3;
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        audio.play().catch(() => {
+            // Autoplay might be blocked; play on user interaction
+            document.body.addEventListener('click', () => audio.play(), { once: true });
+        });
+    }, 500);
+});
+
  </script>
 
  </body>
